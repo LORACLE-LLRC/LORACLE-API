@@ -9,5 +9,6 @@ class Internaute extends Model
 {
     use HasFactory;
     protected $table = "INTERNAUTE";
-    protected $fillable = ['IDINTERNAUTE', 'NOMINTER', 'PRENOMINTER', 'EMAILINTER', 'TELINTER', 'ADRESSEINTER', 'DATENAISSINTER', 'CREDIT'];
+    protected $fillable = ['NOMINTER', 'PRENOMINTER', 'EMAILINTER', 'MDPINTER', 'TELINTER', 'ADRESSEINTER', 'DATENAISSINTER', 'CREDIT'];
+    public $timestamps = false;
 }

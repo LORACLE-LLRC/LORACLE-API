@@ -10,4 +10,5 @@ class Service extends Model
     use HasFactory;
     protected $table = "SERVICE";
     protected $fillable = ['IDTHEME', 'INTITULE', 'DESCRIPTIFSERVICE', 'VILLESERVICE', 'PHOTOSERVICE', 'DATEHDEB', 'DATEHFIN'];
+    public $timestamps = false;
 }
