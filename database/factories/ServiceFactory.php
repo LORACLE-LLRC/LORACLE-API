@@ -19,7 +19,7 @@ class ServiceFactory extends Factory
             'DESCRIPTIFSERVICE' => $this->faker->sentence($nbWords = 12, $variableNbWords = true),
             'VILLESERVICE' => $this->faker->city,
             'PHOTOSERVICE' => $this->faker->mimeType,
-            'DATEHDEB' => $this->faker->date($format = 'Y-m-d', $max = 'now'), 
+            'DATEHDEB' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'DATEHFIN' => $this->faker->date($format = 'Y-m-d', $max = 'now')
         ];
     }
