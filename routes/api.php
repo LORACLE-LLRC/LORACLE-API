@@ -16,9 +16,6 @@ use App\Http\Controllers\ApiControlerService;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::get('/service', ['App\Http\Controllers\ApiControlerService', 'listService']);
-Route::post('/service', ['App\Http\Controllers\ApiControlerService', 'createService']);
+Route::get('/service', ['App\Http\Controllers\ApiServiceControler', 'listService']);
+Route::post('/service', ['App\Http\Controllers\ApiServiceControler', 'createService']);
