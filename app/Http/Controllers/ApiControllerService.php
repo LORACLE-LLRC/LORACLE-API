@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
-class ApiServiceControler extends Controller
+class ApiControllerService extends Controller
 {
     public function listService(){
         return response()->json(Service::all());
