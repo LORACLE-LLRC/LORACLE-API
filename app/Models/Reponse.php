@@ -9,6 +9,7 @@ class Reponse extends Model
 {
     use HasFactory;
     protected $table = "REPONSE";
-    protected $fillable = ['IDREP', 'IDINTERNAUTEP', 'IDINTERNAUTER', 'NUMSERVICE', 'LIBREPONSE', 'DATEREPONSE'];
+    protected $fillable = ['IDINTERNAUTEP', 'IDINTERNAUTER', 'NUMSERVICE', 'LIBELLEREP', 'DATEREPONSE'];
+    protected $primaryKey = 'IDREP';
     public $timestamps = false;
 }

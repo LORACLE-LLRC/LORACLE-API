@@ -18,5 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/service', ['App\Http\Controllers\ApiControllerService', 'listService']);
 Route::post('/service', ['App\Http\Controllers\ApiControllerService', 'createService']);
+
 Route::get('/internaute', ['App\Http\Controllers\ApiControllerInternaute', 'returnInternaute']);
 Route::post('/internaute', ['App\Http\Controllers\ApiControllerInternaute', 'createInternaute']);
+
+Route::get('/reponse', ['App\Http\Controllers\ApiControllerReponse', 'returnReponse']);
+Route::post('/reponse', ['App\Http\Controllers\ApiControllerReponse', 'createReponse']);
