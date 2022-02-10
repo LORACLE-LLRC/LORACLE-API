@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class ApiControllerService extends Controller
 {
-    public function ReturnService(){
+    public function returnServices(){
         $services = Service::where('ESTFINI', 0)->get();
         return response()->json($services);
     }
