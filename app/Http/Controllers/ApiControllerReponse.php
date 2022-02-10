@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class ApiControllerReponse extends Controller
 {
-  public function returnReponse(Request $key)
+  public function returnReponse(Request $request)
   {
-    return response()->json(Reponse::find($key));
+      $reponse = Reponse::where('IDINTERNAUTEP', $request->get('IDINTERNAUTEP'))
+          ->where('IDINTERNAUTER', $request->get('IDINTERNAUTER'))
+          ->where('NUMSERVICE', $request->get('NUMSERVICE'))->first();
+      return response()->json($reponse);
   }
 
   public function createReponse(Request $request){

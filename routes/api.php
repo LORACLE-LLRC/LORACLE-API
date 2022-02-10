@@ -16,11 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/service', ['App\Http\Controllers\ApiControllerService', 'listService']);
-Route::post('/service', ['App\Http\Controllers\ApiControllerService', 'createService']);
-
-Route::get('/internaute', ['App\Http\Controllers\ApiControllerInternaute', 'returnInternaute']);
-Route::post('/internaute', ['App\Http\Controllers\ApiControllerInternaute', 'createInternaute']);
-
-Route::get('/reponse', ['App\Http\Controllers\ApiControllerReponse', 'returnReponse']);
-Route::post('/reponse', ['App\Http\Controllers\ApiControllerReponse', 'createReponse']);
+//Route Service
+Route::get('/returnService', ['App\Http\Controllers\ApiControllerService', 'returnServices']);
+Route::post('/createService', ['App\Http\Controllers\ApiControllerService', 'createService']);
+Route::put('/finishService', ['App\Http\Controllers\ApiControllerService', 'finishService']);
+//Route Internaute
+Route::get('/returnInternaute', ['App\Http\Controllers\ApiControllerInternaute', 'returnInternaute']);
+Route::post('/createInternaute', ['App\Http\Controllers\ApiControllerInternaute', 'createInternaute']);
+//Route Reponse
+Route::get('/returnReponse', ['App\Http\Controllers\ApiControllerReponse', 'returnReponse']);
+Route::post('/createReponse', ['App\Http\Controllers\ApiControllerReponse', 'createReponse']);
+//Route Demande
+Route::get('/returnDemande', ['App\Http\Controllers\ApiControllerDemande', 'returnDemande']);
+Route::post('/createDemande', ['App\Http\Controllers\ApiControllerDemande', 'createDemande']);
+Route::delete('/deleteDemande', ['App\Http\Controllers\ApiControllerDemande', 'deleteDemande']);
+//Route Offre
+Route::get('returnOffre', ['App\Http\Controllers\ApiControllerOffre', 'returnOffre']);
+Route::post('returnOffre', ['App\Http\Controllers\ApiControllerOffre', 'createOffre']);
+Route::delete('returnOffre', ['App\Http\Controllers\ApiControllerOffre', 'deleteOffre']);

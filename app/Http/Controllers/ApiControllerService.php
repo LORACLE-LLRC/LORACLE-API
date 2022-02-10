@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class ApiControllerService extends Controller
 {
-    public function listService(){
-        return response()->json(Service::all());
+    public function ReturnService(){
+        $services = Service::where('ESTFINI', 0)->get();
+        return response()->json($services);
     }
 
     public function createService(Request $request){
@@ -16,13 +17,9 @@ class ApiControllerService extends Controller
         return response()->json($item);
     }
 
-    public function deleteService($id){
-        $service = Service::find($id);
-        if($service){
-            $service->delete();
-            return response()->json(["status" => "succes"]);
-        }else{
-            return response()->json(["status" => "error"]);
-        }
+    public function finishService(Request $request){
+        $service = Service::where('NUMSERVICE', $request->get('NUMSERVICE'))->first()
+            ->update(['ESTFINI' => 1]);
+        return response()->json($service);
     }
 }

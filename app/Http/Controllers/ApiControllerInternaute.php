@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 
 class ApiControllerInternaute extends Controller
 {
-  public function returnInternaute(Request $key)
-  {
-    return response()->json(Internaute::find($key));
-  }
+    public function returnInternaute(Request $request)
+    {
+        $internaute = Internaute::where('EMAILINTERNAUTE', $request->get('EMAILINTERNAUTE'));
+        return response()->json($internaute);
+    }
 
-  public function createInternaute(Request $request){
-    $item = Internaute::create($request->all());
-    return response()->json($item);
-  }
+    public function createInternaute(Request $request){
+        $item = Internaute::create($request->all());
+        return response()->json($item);
+    }
 }
