@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Internaute;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class ApiControllerInternaute extends Controller
 {
