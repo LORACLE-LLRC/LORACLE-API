@@ -10,7 +10,7 @@ class ApiControllerInternaute extends Controller
 {
     public function returnInternaute(Request $request)
     {
-        $internaute = Internaute::where('EMAILINTER', $request->get('EMAILINTER'));
+        $internaute = Internaute::where('EMAILINTER', $request->get('EMAILINTER'))->get();
         return response()->json($internaute);
     }
 
