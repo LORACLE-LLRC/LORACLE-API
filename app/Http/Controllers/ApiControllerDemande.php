@@ -8,18 +8,21 @@ use Illuminate\Routing\Controller;
 
 class ApiControllerDemande extends Controller
 {
-    public function returnDemande(Request $request){
-        $demande = Demande::where('IDINTERNAUTE', $request->get('IDINTERNAUTE'))
+    public function returnDemande(Request $request)
+    {
+        $demandes = Demande::where('IDINTERNAUTE', $request->get('IDINTERNAUTE'))
             ->where('NUMSERVICE', $request->get('NUMSERVICE'))->first();
-        return response()->json($demande);
+        return response()->json($demandes);
     }
 
-    public function createDemande(Request $request){
+    public function createDemande(Request $request)
+    {
         $item = Demande::create($request->all());
         return response()->json($item);
     }
 
-    public function deleteDemande($id){
+    public function deleteDemande($id)
+    {
         $demande = Demande::find($id);
         if($demande){
             $demande->delete();
