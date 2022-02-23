@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 class ApiControllerService extends Controller
 {
     public function returnServices(){
-        $services = Service::where('ESTFINI', 0)->get();
+        $services = Service::where('ESTFINI', 0)->orderby('NUMSERVICE', 'DESC')->get();
         return response()->json($services);
     }
 
