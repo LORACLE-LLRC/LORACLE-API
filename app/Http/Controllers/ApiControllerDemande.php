@@ -10,8 +10,7 @@ class ApiControllerDemande extends Controller
 {
     public function returnDemande(Request $request)
     {
-        $demandes = Demande::where('IDINTERNAUTE', $request->get('IDINTERNAUTE'))
-            ->where('NUMSERVICE', $request->get('NUMSERVICE'))->get();
+        $demandes = Demande::where('IDINTERNAUTE', $request->get('IDINTERNAUTE'))->get();
         return response()->json($demandes);
     }
 
