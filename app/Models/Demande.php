@@ -10,6 +10,6 @@ class Demande extends Model
     use HasFactory;
     protected $table = "DEMANDE";
     protected $fillable = ['IDINTERNAUTE','NUMSERVICE'];
-    protected $primaryKey = ['IDDEMANDE'];
+    protected $primaryKey = 'IDDEMANDE';
     public $timestamps = false;
 }
