@@ -10,6 +10,6 @@ class Offre extends Model
     use HasFactory;
     protected $table = "OFFRE";
     protected $fillable = ['IDINTERNAUTE','NUMSERVICE'];
-    protected $primaryKey = ['IDINTERNAUTE','NUMSERVICE'];
+    protected $primaryKey = 'IDOFFRE';
     public $timestamps = false;
 }
